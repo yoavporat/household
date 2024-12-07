@@ -6,6 +6,7 @@ import {
   IconMoodHappy,
   IconTypography,
   IconUserPlus,
+  IconReceipt
 } from "@tabler/icons-react";
 
 import { uniqueId } from "lodash";
@@ -13,14 +14,24 @@ import { uniqueId } from "lodash";
 const Menuitems = [
   {
     navlabel: true,
-    subheader: "Home",
+    subheader: "בית",
   },
 
   {
     id: uniqueId(),
-    title: "Dashboard",
+    title: "דשבורד",
     icon: IconLayoutDashboard,
     href: "/",
+  },
+  {
+    navlabel: true,
+    subheader: "כספים",
+  },
+  {
+    id: uniqueId(),
+    title: "קבצים",
+    icon: IconReceipt,
+    href: "/finance/files",
   },
   {
     navlabel: true,

@@ -1,6 +1,5 @@
 import { useMediaQuery, Box, Drawer } from "@mui/material";
 import SidebarItems from "./SidebarItems";
-import { Upgrade } from "./Updrade";
 import { Sidebar, Logo } from 'react-mui-sidebar';
 
 interface ItemType {
@@ -43,7 +42,7 @@ const MSidebar = ({
         {/* Sidebar for desktop */}
         {/* ------------------------------------------- */}
         <Drawer
-          anchor="left"
+          anchor="right"
           open={isSidebarOpen}
           variant="permanent"
           PaperProps={{
@@ -68,6 +67,7 @@ const MSidebar = ({
               themeColor="#5d87ff"
               themeSecondaryColor="#49beff"
               showProfile={false}
+              direction="rtl"
             >
               {/* ------------------------------------------- */}
               {/* Logo */}
@@ -78,7 +78,6 @@ const MSidebar = ({
                 {/* Sidebar Items */}
                 {/* ------------------------------------------- */}
                 <SidebarItems />
-                <Upgrade />
               </Box>
             </Sidebar >
           </Box>
@@ -122,7 +121,6 @@ const MSidebar = ({
           {/* Sidebar Items */}
           {/* ------------------------------------------- */}
           <SidebarItems />
-          <Upgrade />
         </Sidebar>
       </Box>
       {/* ------------------------------------------- */}

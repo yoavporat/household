@@ -6,7 +6,8 @@ import {
     TableCell,
     TableHead,
     TableRow,
-    Chip
+    Chip,
+    styled
 } from '@mui/material';
 import DashboardCard from '@/app/(DashboardLayout)//components/shared/DashboardCard';
 
@@ -51,8 +52,10 @@ const products = [
 
 
 const ProductPerformance = () => {
+    const StyledTableCell = styled(TableCell)(({ theme }) => ({
+        textAlign: "right",
+    }));
     return (
-
         <DashboardCard title="Product Performance">
             <Box sx={{ overflow: 'auto', width: { xs: '280px', sm: 'auto' } }}>
                 <Table
@@ -64,37 +67,37 @@ const ProductPerformance = () => {
                 >
                     <TableHead>
                         <TableRow>
-                            <TableCell>
+                            <StyledTableCell>
                                 <Typography variant="subtitle2" fontWeight={600}>
                                     Id
                                 </Typography>
-                            </TableCell>
-                            <TableCell>
+                            </StyledTableCell>
+                            <StyledTableCell>
                                 <Typography variant="subtitle2" fontWeight={600}>
                                     Assigned
                                 </Typography>
-                            </TableCell>
-                            <TableCell>
+                            </StyledTableCell>
+                            <StyledTableCell>
                                 <Typography variant="subtitle2" fontWeight={600}>
                                     Name
                                 </Typography>
-                            </TableCell>
-                            <TableCell>
+                            </StyledTableCell>
+                            <StyledTableCell>
                                 <Typography variant="subtitle2" fontWeight={600}>
                                     Priority
                                 </Typography>
-                            </TableCell>
-                            <TableCell align="right">
+                            </StyledTableCell>
+                            <StyledTableCell align="right">
                                 <Typography variant="subtitle2" fontWeight={600}>
                                     Budget
                                 </Typography>
-                            </TableCell>
+                            </StyledTableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {products.map((product) => (
                             <TableRow key={product.name}>
-                                <TableCell>
+                                <StyledTableCell>
                                     <Typography
                                         sx={{
                                             fontSize: "15px",
@@ -103,8 +106,8 @@ const ProductPerformance = () => {
                                     >
                                         {product.id}
                                     </Typography>
-                                </TableCell>
-                                <TableCell>
+                                </StyledTableCell>
+                                <StyledTableCell>
                                     <Box
                                         sx={{
                                             display: "flex",
@@ -125,13 +128,13 @@ const ProductPerformance = () => {
                                             </Typography>
                                         </Box>
                                     </Box>
-                                </TableCell>
-                                <TableCell>
+                                </StyledTableCell>
+                                <StyledTableCell>
                                     <Typography color="textSecondary" variant="subtitle2" fontWeight={400}>
                                         {product.pname}
                                     </Typography>
-                                </TableCell>
-                                <TableCell>
+                                </StyledTableCell>
+                                <StyledTableCell>
                                     <Chip
                                         sx={{
                                             px: "4px",
@@ -141,10 +144,10 @@ const ProductPerformance = () => {
                                         size="small"
                                         label={product.priority}
                                     ></Chip>
-                                </TableCell>
-                                <TableCell align="right">
+                                </StyledTableCell>
+                                <StyledTableCell align="right">
                                     <Typography variant="h6">${product.budget}k</Typography>
-                                </TableCell>
+                                </StyledTableCell>
                             </TableRow>
                         ))}
                     </TableBody>

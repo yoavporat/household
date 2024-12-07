@@ -10,6 +10,7 @@ import {
   ListItemButton,
 } from "@mui/material";
 import Link from "next/link";
+import { text } from "stream/consumers";
 
 type NavGroup = {
   [x: string]: any;
@@ -44,7 +45,8 @@ const NavItem = ({ item, level, pathDirect, onClick }: ItemType) => {
       borderRadius: "8px",
       backgroundColor: level > 1 ? "transparent !important" : "inherit",
       color: theme.palette.text.secondary,
-      paddingLeft: "10px",
+      paddingInlineStart: "10px",
+      textAlign: "right",
       "&:hover": {
         backgroundColor: theme.palette.primary.light,
         color: theme.palette.primary.main,
